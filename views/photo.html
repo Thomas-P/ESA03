@@ -1,0 +1,42 @@
+		{% block title %}Home{% endblock %}
+
+		{% extends 'layout/full.html' %}
+
+		{% block content %}
+		<article id="photo" data-set="1">
+			<div id="startCamera">
+				<h2>Connect to camera</h2>
+				<p>We try to find and connect to your camera. Please allow us to use your camera.</p>
+			</div>
+			<div id="VideoStream">
+				<video id="takePhotoElement"></video>
+				<form method="post" id="phototoggle">
+					<input type="submit" value="Take" name="take" class="fixed" />
+					<input type="button" value="to full screen" name="switchFullScreen" id="sfs" class="fixed" />
+				</form>
+			</div>
+			<div id="TakePhoto">
+				<form method="post">
+					<h2>Take Photo</h2>
+					<label for="description">Beschreibung:</label>
+					<textarea name="description"></textarea>
+					<canvas id=""></canvas>
+					<input type="button" name="resetPhoto" value="Foto verwerfen" class="photo-button-left" /> <input type="button" name="sendPhoto" value="Foto senden" class="photo-button-right" />
+				</form>
+			</div>
+			<div id="DevicesNotFoundError">
+				<h2>Photo - No Camera found</h2>
+				<p class="failure">Sorry, but we could not found a camera.</p>
+			</div>
+			<div id="AccessToCameraDenied">
+				<h2>Photo - Access denied</h2>
+				<p class="message">You denied to use your camera. If you wan't to
+				 use them right now, please confirm the button.</p>
+				 <input type="button" name="allowCamera" value="Retry to connect to your camera." />
+			</div>
+			<div id="sendPhoto">
+				<h2>Photo - sending</h2>
+				<p class="message">We send your photo. It could be take some seconds.</p>
+			</div>
+		</article>
+		{% endblock %}

@@ -1,0 +1,109 @@
+@media only screen and (max-width: 479px) {
+	.toggle:after { 
+		text-align: center; width: 100%; 
+	}
+	header > h1 { 
+		text-align: center;
+	}
+	header > h1, header nav, toggle:after{ 
+		float: none; 
+	}
+}
+
+/**
+ * Navigation basierend auf Navigataur
+ * https://github.com/micjamking/Navigataur
+ */
+nav {
+
+	display: table; 
+	float: right; 
+
+	.main-navigation {
+		padding: 0;
+		margin: 0;
+
+		a {
+			color: #fff;
+			text-decoration: none;
+			font-weight: bold;
+			font-size: 1.5em;
+			
+			display: table-cell;
+    	vertical-align: middle;
+    	height: 100%;
+		}
+
+
+		> li {
+			/* */
+			list-style: none; 
+			float:left;
+			display: table;
+			text-align: center;
+
+			@include respond-to(widescreen) {
+				margin: .5em;
+				width: 	 11em;
+				height:  5em;
+				border-radius: 0.5em;
+				padding-top: 0.5em;
+				border-bottom: {
+	 				color: transparent;
+	 				style: solid;
+	 				width: .5em;
+	 			}
+			}
+			@include respond-to(screen) {
+				& > a {
+					font: {
+						size: 1em;
+					 	style: normal;
+					 	color: red;
+					}
+				}
+				margin: .2em;
+				width: 	 100px;
+				height:  3em;
+				border-radius: 0.2em;
+				padding-top: 0.5em;
+				border-bottom: {
+	 				color: transparent;
+	 				style: solid;
+	 				width: .5em;
+	 			}
+			}
+
+			line-height: 1;
+			box-sizing: border-box;
+			transition: all 0.3s ease-in-out;
+			box-shadow: 3px 3px 6px 0 darken($header-color,40%);
+
+			opacity:.8;
+
+			@for $i from 0 to length($nav-color) {
+				&:nth-child(#{$i+1}) {
+		        background: nth($nav-color, $i+1);
+		        &:hover {
+		        	border-bottom-color: darken(nth($nav-color, $i+1), 20% ); 
+		        }
+			    }
+			}
+
+   		&:hover {
+   			& > a {
+   				color: #fff;
+   			}
+   			border-bottom: {
+   				style: solid;
+   				width: .5em;
+
+
+   			}
+   		}
+
+			/* */
+
+		}
+	}
+}

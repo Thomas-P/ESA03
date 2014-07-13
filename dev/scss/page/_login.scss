@@ -1,0 +1,18 @@
+form.unlogged {
+	width: 100%;
+	display: block;
+	input, label {
+		width: 75%;
+		font-size: 1.2em;
+		border-radius: 5px;
+		display: block;
+		margin: 0 auto 10px auto;
+	}
+	label {
+		margin-bottom: 0;
+	}
+	input {
+		box-shadow: 3px 3px 10px 0px rgba(128, 128, 128, 0.5); /* Standard */
+	}
+}
+

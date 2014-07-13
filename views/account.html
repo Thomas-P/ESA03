@@ -1,0 +1,24 @@
+		{% block title %}Home{% endblock %}
+
+		{% extends 'layout/full.html' %}
+
+		{% block content %}
+		<article id="account" class="account">
+			<header>
+				<h2 class="logo">Account</h2>
+			</header>
+			<div>
+				<p>User: <span id="account-user">{{ username|escape }}</span>, (<span id="account-registered">{{ registered|date('d.m.Y H:i:s')|escape }}</span>)</p>
+				<p>Photos: <span id="account-photos">{{ photos.length }}</span></p>
+				<ul class="privateStream">
+					{% for x in photos %}
+					<li class="photolist">
+						<img src="/images/{{ x.photoId|escape }}" />
+						<p class="description">{{ x.description|escape }}</p>
+						<p>From <span class="user">{{ x.username|escape }}</span> at <span class="time">{{ x.shotAt|date('d.m.Y H:i:s')|escape }}</span></p>
+					</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</article>
+		{% endblock %}

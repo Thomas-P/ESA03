@@ -1,0 +1,20 @@
+			{% block title %}Home{% endblock %}
+
+			{% extends 'layout/full.html' %}
+
+			{% block content %}
+			<article id="home">
+				<header>
+					<h2>Stream</h2>
+				</header>
+				<ul class="stream">
+					{% for x in photos %}
+					<li class="photolist">
+						<img src="/images/{{ x.photoId|escape}}" />
+						<p class="description">{{ x.description|escape }}</p>
+						<p>From <span class="user">{{ x.username|escape }}</span> at <span class="time">{{ x.shotAt|date('d.m.Y H:i:s')|escape }}</span></p>
+					</li>
+					{% endfor %}
+				</ul>
+			</article>
+			{% endblock %}

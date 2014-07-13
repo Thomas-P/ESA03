@@ -1,0 +1,28 @@
+.stream, .privateStream {
+	list-style: none;
+	margin: 0 10px 70px 10px;
+	padding: 0;
+	max-width: 100%;
+
+	li.photolist {
+		margin: 0;
+		padding: 0;
+
+		img {
+			max-width: 80%;
+			max-height: 150px;
+		}
+		p {
+			font-size: 0.8em;
+			span {
+				font-variant: italic;
+			}
+		}
+		p.description {
+			display: block;
+			text-align: justify;
+			padding: 5px 0 5px 0;
+			margin: 0;
+		}
+	}
+}

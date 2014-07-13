@@ -1,0 +1,13 @@
+body > header { 
+	display:none;
+}
+body > footer {
+	display:none;
+}
+body > aside {
+	display:none;
+}
+body::before {
+	content: "Meine Projektseite - Ausdruck";
+	font-size: 1.7em;
+}

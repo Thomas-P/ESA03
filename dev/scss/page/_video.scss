@@ -1,0 +1,87 @@
+video {
+	height:100%;
+	width:100%;
+}
+
+
+input[name="take"] {
+	position: fixed;
+	bottom: 50px !important;
+	z-index: 1;
+	left: calc( 50% - 75px );
+	width: 150px;
+	height: 40px;
+}
+input[name="take"]:fullscreen, input[name="take"]:-webkit-full-screen, input[name="take"]:-moz-full-screen {
+	bottom: 10px !important;
+}
+
+
+input[name="switchFullScreen"] {
+	position: fixed;
+	z-index: 1;
+	top: 10px !important;
+	left: calc( 50% - 75px );
+	width: 150px;
+	height: 40px;
+}
+
+@media only screen and (orientation: landscape) {
+	input[name="take"] {
+		position: fixed;
+		bottom: calc( 50% - 20px ) !important;
+		z-index: 1;
+		left: calc( 100% - 160px );
+		width: 150px;
+	}
+	input[name="take"]:fullscreen, input[name="take"]:-webkit-full-screen, input[name="take"]:-moz-full-screen {
+		bottom: calc( 50% - 20px ) !important;
+	}
+
+	input[name="switchFullScreen"] {
+		position: fixed;
+		z-index: 1;
+		top: calc( 50% - 20px ) !important;
+		left: 10px;
+		width: 150px;
+		height: 40px;
+	}
+}
+
+input[name="resetPhoto"], input[name="sendPhoto"] {
+	position: fixed;
+	height: 40px;
+	width: 150px;
+	bottom: 50px !important;
+}
+input[name="resetPhoto"] {
+	left: calc( 50% - 160px );
+}
+input[name="sendPhoto"] {
+	left: calc( 50% + 10px );
+}
+textarea[name="description"] {
+	width: 90%;
+	height: 150px;
+	margin-bottom: 10px;
+}
+label[for="description"] {
+	margin-top: 10px;
+	display: block;
+}
+canvas {
+	width: 60%;
+	margin: 0 20%;
+	margin-bottom: 100px;
+	max-height: 300px;
+}
+
+#TakePhoto {
+	width: 100%;
+	display: block;
+}
+
+video:fullscreen, video:-webkit-full-screen, video:-moz-full-screen {
+	height:100%;
+	width:100%;
+}

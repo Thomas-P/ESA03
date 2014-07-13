@@ -1,0 +1,31 @@
+body {
+	margin: auto auto;
+	padding: 0;
+	width: 320px;
+	section.logged {
+		display: none;
+	}
+}
+
+main {
+	> section {
+		display: none;
+	}
+}
+
+main[data-step="1"] {
+	> #load {
+		display: block;
+	}
+}
+
+main[data-step="2"] {
+	> #login {
+		display: block;
+	}
+}
+main[data-step="3"] {
+	> #use {
+		display: block;
+	}
+}

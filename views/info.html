@@ -1,0 +1,25 @@
+{% block title %}Home{% endblock %}
+
+{% extends 'layout/full.html' %}
+
+{% block content %}
+		<article id="info">
+			<header>
+				<h2 class="logo">Snapshot</h2>
+				<h3 class="logo-sub">A technique experiment</h3>
+			</header>
+			<p>This small app is to show features and problems in dealing with mobile development. First, the easy control of getUserMedia, but also dealing with sockets and the idea of ​​event-based communication between interfaces. It was intentionally omitted JQuery, otherwise it would have been too easy.</p>
+			<p>The app should gives you an understanding of how you can work natively with HTML5 and Javascript today.</p>
+			<h4>used libraries and techniques:</h4>
+			<ul>
+				<li>
+				<a href="https://github.com/jquery/jquery/blob/2c2c93c7cbfafdb06a27dafee88fc67b265c8e32/src/selector-native.js#L121" target="_blank">JQuery text from github</a>
+				</li>
+				<li><a href="https://paularmstrong.github.io/swig/" target="_blank">Swig - Template Engine</a></li>
+				<li><a href="http://feathersjs.com/" target="_blank">Feathers</a></li>
+				<li><a href="http://requirejs.org/">RequireJS</a></li>
+				<li><a href="http://sass-lang.com/">SASS</a></li>
+				<li><a href="http://use-init.com/">Use Init</a></li>
+			</ul>
+		</article>
+{% endblock %}

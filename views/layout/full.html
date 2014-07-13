@@ -1,0 +1,61 @@
+{% if not raw %}<!doctype html>
+<html>
+<head>
+	<title>{% block title %}{% endblock %}</title>
+	<meta charset="utf-8"/>
+	<meta name="description" content="{% block description %}{% endblock %}">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+	<meta name="author" content="Thomas Puttkamer, Gasthörer">  
+	<link rel="stylesheet" type="text/css" href="/css/main.min.css">
+	<!--<script src="js/vendor/modernizr-2.7.1.min.js"></script>-->
+	<script src="scripts/require.js"></script>
+	<script src="scripts/main.js" async defer></script>
+</head>
+<body>
+	<header>
+		<ul>
+			<li><a href="/" title="Stream">Stream</a></li>
+			<li><a href="/photo" title="Photo">Photo</a></li>
+			<li><a href="/account" title="Account">Account</a></li>
+			<li><a href="/info" title="Information zur verwendeten Technik">Info</a></li>
+		</ul>
+	</header>
+	<main class="loadDOM" data-step="1">
+		<section id="load">
+			<h2>Welcome</h2>
+			<p>The app is loading, it took just a few moment, please wait.</p>
+		</section>
+		<section id="login">
+			<!-- show this, if you not logged -->
+			<h2>Login</h2>
+			<p>Please login to use these service.</p>
+			<form method="post" class="unlogged">
+				<label for="user">Benutzername</label>
+				<input type="text" name="user" id="usernameForLogin" />
+				<input type="submit" value="Login" name="login" />
+			</form>
+		</section>
+		<!-- show content, if a user is logged -->
+		<section id="use">
+			{% block content %}
+			{% endblock %}    
+		</section>
+		<!-- Failures -->
+		<section id="fail">
+			<h2>Some errors occurs</h2>
+			<ul>
+				<li></li>
+			</ul>
+		</section>
+	</main>
+	<footer>
+		<div id="hidden_container">
+			<!-- Contains all Templates that are loaded -->
+		</div>
+	</footer>
+</body>
+</html>
+{% else %}
+{% block content %}
+{% endblock %}    
+{% endif %}

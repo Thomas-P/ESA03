@@ -1,0 +1,25 @@
+/**
+ * Variables to be used throughout the project
+ */
+
+// Fonts
+$font-main: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-key: Georgia, 'Times New Roman', serif;
+
+// <hr> color
+$hr-color: #ccc;
+
+// Text selection background color
+$selection-color: #b3d4fc;
+
+// Text Color
+$main-color: #222;
+
+$background-color: #CDD5D8;
+$header-color: darken($background-color, 10%);
+
+$focus-color: rgba(22, 145, 190, .8);
+$shadow-color: rgba(48, 43, 43, 0.557);
+// Farben Navigation
+$col: ( rgba(22, 145, 190, .8), rgba(22, 107, 162, .8), rgba(27, 54, 71, .8), rgba(21, 40, 54, .8) );
+$nav-color: ( rgba(22, 145, 190, 1), rgba(22, 107, 162, 1), mix(nth($col, 1),nth($col, 3)), mix(nth($col, 2),nth($col, 4)), rgba(27, 54, 71, 1), rgba(21, 40, 54, 1) );

@@ -1,0 +1,57 @@
+/**
+ generiert einen Button, mit dem man die Navigation anzeigen/ausblenden kann
+*/
+// Bugfix for Android
+body { 
+  -webkit-animation: bugfix infinite 1s; 
+}
+@-webkit-keyframes bugfix { 
+  from { padding: 0; } 
+  to { padding: 0; } 
+}
+// Main Navigation
+nav[role="navigation"] {
+	input[type="checkbox"] {
+	  position: absolute;
+	  top: -9999px;
+	  left: -9999px;
+	}
+  // Label repräsentiert den Button
+  label {
+  	cursor: pointer;
+  	user-select: none;
+	  z-index: 2;
+    display: none;
+  }
+}
+// Nur für Handhelds gedacht
+@media screen and (max-width: 767px) {
+  nav[role="navigation"] {
+    ul {
+      display: none;
+      height: 100%;
+    }
+
+    label {
+      display: block;
+      width: 100%;
+    }
+    // Benenne das Label -> gestaltung hierüber möglich
+    label:after {
+        content: attr(data-open);
+    }
+    // Plus Selector selektiert das Element hinter dem ersten Element
+    // http://stackoverflow.com/questions/1139763/what-does-the-plus-sign-css-selector-mean
+    input[type="checkbox"]:checked + label:after {
+			content: attr(data-close);
+		}
+    // Geschwisterselektor
+    // nachfolgende ul sind betroffen
+  	input:checked ~ ul {
+      display: block;
+      > li {
+        width: 100%;
+      }        
+    }
+  }
+}
